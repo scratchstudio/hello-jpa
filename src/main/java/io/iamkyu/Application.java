@@ -15,7 +15,12 @@ public class Application {
         tx.begin();
 
         try {
-            em.find(Member.class, 1L);
+            Member member1 = new Member(1L, "Foo");
+            Member member2 = new Member(2L, "Bar");
+
+            em.persist(member1);
+            em.persist(member2);
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();

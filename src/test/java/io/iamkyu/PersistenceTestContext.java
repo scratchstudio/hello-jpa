@@ -1,5 +1,6 @@
 package io.iamkyu;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
 import javax.persistence.*;
@@ -25,5 +26,12 @@ public abstract class PersistenceTestContext {
         assertThat(tx).isNotNull();
 
         persistenceUnitUtil = emf.getPersistenceUnitUtil();
+    }
+
+    @AfterAll
+    static void afterAll() {
+        em.clear();
+        em.close();
+        emf.close();
     }
 }

@@ -6,11 +6,11 @@
     <persistence-unit name="test">
         <properties>
             <!-- 필수 속성 -->
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.user" value="user"/>
-            <property name="javax.persistence.jdbc.password" value="pass"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect"/>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test;"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+
 
             <!-- 옵션 -->
             <property name="hibernate.show_sql" value="true"/>

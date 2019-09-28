@@ -31,7 +31,7 @@ public class ProxyTest extends PersistenceTestContext {
 
     @AfterEach
     void tearDown() {
-        tx.commit();
+        tx.rollback();
     }
 
     @DisplayName("find 를 할때는 DB 에 쿼리한다")
